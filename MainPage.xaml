@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="LabelLv2"
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App UI"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Grid 
+                WidthRequest="512" 
+                RowSpacing="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    VerticalOptions="End"
+                    Text="Actions" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    VerticalOptions="End"
+                    Text="PIDs" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    VerticalOptions="End"
+                    Text="Status" />
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    WidthRequest="96"
+                    
+                    x:Name="StartBtn"
+                    Text="Start"
+                    SemanticProperties.Hint="Start the app"
+                    Clicked="OnStartClicked"/>
+
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    WidthRequest="96"
+                    
+                    x:Name="UpdateBtn"
+                    Text="Update"
+                    SemanticProperties.Hint="Update the app"
+                    Clicked="OnUpdateClicked"/>
+
+                <Button 
+                    Grid.Row="3"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    WidthRequest="96"
+                    
+                    x:Name="SettingsBtn"
+                    Text="Settings"
+                    SemanticProperties.Hint="Go to settings"
+                    Clicked="OnSettingsClicked"/>
+
+                <Label 
+                    x:Name="AppStatusLabel"
+                    Grid.Row="1" 
+                    Grid.Column="1" 
+                    SemanticProperties.Hint="Status" 
+                    TextColor="Red" 
+                    Text="Off"
+                    VerticalOptions="Center"
+                    IsVisible="true"/>
+                <Label 
+                    x:Name="AppPidLabel"
+                    Grid.Row="1" 
+                    Grid.Column="2" 
+                    SemanticProperties.Hint="Process ID"
+                    TextColor="Green" 
+                    VerticalOptions="Center"
+                    IsVisible="false"/>
+
+                <Label
+                    Grid.Row="2" 
+                    Grid.Column="1" 
+                    SemanticProperties.Hint="Status" 
+                    TextColor="Red" 
+                    Text="Off"
+                    IsVisible="false"
+                    VerticalOptions="Center"/>
+                <Label
+                    Grid.Row="2" 
+                    Grid.Column="2" 
+                    SemanticProperties.Hint="Process ID"
+                    VerticalOptions="Center"
+                    TextColor="Green" 
+                    IsVisible="false"/>
+            </Grid>
+
+            <Editor
+                x:Name="LogsEditor"
+                IsReadOnly="True"
+                Text="A readonly logs..."
+                HeightRequest="224"
+                WidthRequest="512" 
+                />
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

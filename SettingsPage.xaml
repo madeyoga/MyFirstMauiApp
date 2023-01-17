@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.SettingsPage"
+             Title="SettingsPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Client settings"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry 
+            x:Name="MainCommandEntry"
+            Margin="16,8"
+            Placeholder="Main app command" />
+        <Entry 
+            x:Name="MainWorkingDirEntry"
+            Margin="16,8"
+            Placeholder="Main working directory" />
+        <Entry 
+            x:Name="UpdateCommandEntry"
+            Margin="16,8"
+            Placeholder="Update app command" />
+        <Entry 
+            x:Name="UpdateWorkingDirEntry"
+            Margin="16,8"
+            Placeholder="Update working directory" />
+
+        <Button 
+            Margin="0,8"
+            Text="Save"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Clicked="OnSaveButtonClicked"/>
+    </VerticalStackLayout>
+</ContentPage>
